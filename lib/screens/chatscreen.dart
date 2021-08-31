@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class ChatScreen extends StatelessWidget {
-  const ChatScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,15 +33,15 @@ class ChatScreen extends StatelessWidget {
           Firestore.instance
               .collection('/chats/XtrUsUzAIHAsLJvmsBor/messages')
               .add({'text': 'hyy this text uploded by clicking'});
-          // Firestore.instance
-          //     .collection('/chats/XtrUsUzAIHAsLJvmsBor/messages')
-          //     .snapshots()
-          //     .listen((event) {
-          //   event.documents.forEach((element) {
-          //     print(element['text']);
-          //   });
-          //   // print(event.documents[0]['text'],);
-          // });
+          Firestore.instance
+              .collection('/chats/XtrUsUzAIHAsLJvmsBor/messages')
+              .snapshots()
+              .listen((event) {
+            event.documents.forEach((element) {
+              print(element['text']);
+            });
+            // print(event.documents[0]['text'],);
+          });
         },
       ),
     );
