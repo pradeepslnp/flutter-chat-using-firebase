@@ -33,15 +33,15 @@ class ChatScreen extends StatelessWidget {
           Firestore.instance
               .collection('/chats/XtrUsUzAIHAsLJvmsBor/messages')
               .add({'text': 'hyy this text uploded by clicking'});
-          Firestore.instance
-              .collection('/chats/XtrUsUzAIHAsLJvmsBor/messages')
-              .snapshots()
-              .listen((event) {
-            event.documents.forEach((element) {
-              print(element['text']);
-            });
-            // print(event.documents[0]['text'],);
-          });
+          // Firestore.instance
+          //     .collection('/chats/XtrUsUzAIHAsLJvmsBor/messages')
+          //     .snapshots()
+          //     .listen((event) {
+          //   event.documents.forEach((element) {
+          //     print(element['text']);
+          //   });
+          //   // print(event.documents[0]['text'],);
+          // });
         },
       ),
     );
